@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import TrackList from './TrackList';
 
 const Playlists = () => {
   const [playlists, setPlaylists] = useState([]);
@@ -44,17 +45,14 @@ const Playlists = () => {
 
   return (
     <div>
-      <h2>Your Playlists: Token {token}</h2>
+      <h2>Select playlist</h2>
       <select onChange={(e) => fetchTracks(e.target.value)}>
         {playlists.map((pl) => (
           <option key={pl.id} value={pl.id}>{pl.name}</option>
         ))}
       </select>
-      <ul>
-        {tracks.map((track, idx) => (
-          <li key={idx}>{track.track.name}  ({ track.track.artists.map(artist => artist.name).join(", ")}) - {idx+1}</li>
-        ))}
-      </ul>
+      <TrackList tracks={tracks} />
+
     </div>
   );
 }

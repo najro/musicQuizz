@@ -89,3 +89,24 @@ button:focus-visible {
   background-color: #188c3f; /* Even darker green when clicked */
 }
 
+
+.split-list-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.split-list-left, .split-list-right {
+  /*width: 48%;*/ /* Adjust the width as needed */
+}
+
+ul {
+  padding-left: 4em;
+  list-style-type: none;
+}
+
+li {
+  text-align: left;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;    /* Ensure long content doesn't overflow the container */
+  text-overflow: ellipsis; /* Optional: Add ellipsis for overflowed text */
+}
