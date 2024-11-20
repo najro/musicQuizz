@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import BackToDashBoard from '../components/BackToDashBoard'
 
 const generateRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -51,7 +51,10 @@ const GameBoardGenerator = () => {
   };
 
   return (
-    <div className="app">
+    <>
+     <BackToDashBoard/>
+    
+    <div>
       <form onSubmit={handleSubmit}>
         <label>
           Title
@@ -109,7 +112,7 @@ const GameBoardGenerator = () => {
           />
         </label>
         <br />
-        <button type="submit">Generate game board</button>
+        <button type="submit" className="button button-blue">Generate game board</button>
       </form>
       <table>
         <thead>
@@ -129,9 +132,10 @@ const GameBoardGenerator = () => {
       </table>
 
       <div class="printversion">
-        <button onClick={handlePrint}>Print</button>
+        <button className="button button-green" onClick={handlePrint}>Print</button>
       </div>
     </div>
+    </>
   );
 };
 

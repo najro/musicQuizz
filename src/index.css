@@ -3,58 +3,232 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  /* color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
+  margin-top: 5em;
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  margin-bottom: 1.5em;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+
+/* Back Button Styles */
+.back-button {
+  position: absolute; /* Positions the button in the top-left corner */
+  top: 1rem;
+  left: 1rem;
+  background-color: black; /* Initial background color */
+  color: white; /* Text color */
+  font-size: 1rem; /* Font size */
+  font-weight: bold; /* Make the text bold */
+  border: 2px solid white; /* White border for contrast */
+  border-radius: 5px; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Add some padding */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-transform: uppercase; /* Uppercase text for a bold look */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover Effect */
+.back-button:hover {
+  background-color: white; /* Change background to white */
+  color: black; /* Change text color to black */
+  transform: scale(1.1); /* Slightly enlarge the button */
+  border-color: black; /* Change border color to black */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .back-button {
+    font-size: 0.9rem; /* Slightly smaller font on small screens */
+    padding: 0.4rem 0.8rem; /* Adjust padding for smaller screens */
+  }
+}
+
+
+
+
+
+
+
+/* Base Button Styles */
+.button {
+  color: white;
+  border: none;
+  border-radius: 2.5em; /* Rounded edges */
+  padding: 1em 2em; /* Add some padding */
+  font-size: 1em; /* Adjust font size */
+  font-weight: bold;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  text-transform: uppercase; /* Optional: uppercase text */
+  font-family: Arial, sans-serif; /* General sans-serif style */
+  transition: background-color 0.5s ease;
+  min-width: 17em;
 }
 
-@media (prefers-color-scheme: light) {
+/* Spotify Green Button */
+.button-green {
+  background-color: #1db954; /* Spotify green */
+}
+
+.button-green:hover {
+  background-color: #1aa34a; /* Slightly darker green on hover */
+}
+
+.button-green:active {
+  background-color: #188c3f; /* Even darker green when clicked */
+}
+
+/* Blue Button */
+.button-blue {
+  background-color: #007bff; /* Bootstrap blue */
+}
+
+.button-blue:hover {
+  background-color: #0056b3; /* Slightly darker blue on hover */
+}
+
+.button-blue:active {
+  background-color: #003f7f; /* Even darker blue when clicked */
+}
+
+/* Red Button */
+.button-red {
+  background-color: #ff4d4d; /* Bright red */
+}
+
+.button-red:hover {
+  background-color: #e63939; /* Slightly darker red on hover */
+}
+
+.button-red:active {
+  background-color: #cc3333; /* Even darker red when clicked */
+}
+
+
+
+
+
+/* Wrapper for custom dropdown */
+.custom-dropdown {
+  display: inline-block;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+/* Base styling for select */
+.styled-select {
+  appearance: none; /* Removes default browser styles */
+  background-color: #1db954; /* Spotify green */
+  color: white;
+  border: none;
+  border-radius: 2.5em; /* Rounded edges */
+  padding: 1em 2em; /* Add padding */
+  font-size: 1em; /* Adjust font size */
+  font-weight: bold;
+  text-transform: uppercase; /* Optional: uppercase text */
+  cursor: pointer;
+  transition: background-color 0.5s ease, box-shadow 0.3s ease;
+  width: 100%; /* Full width inside container */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect */
+.styled-select:hover {
+  background-color: #1aa34a; /* Slightly darker green */
+}
+
+/* Focus effect */
+.styled-select:focus {
+  outline: none; /* Removes default focus outline */
+  box-shadow: 0 0 5px #1db954; /* Green glow */
+}
+
+/* Styling the dropdown arrow */
+.styled-select::-ms-expand {
+  display: none; /* Remove default dropdown arrow in IE/Edge */
+}
+
+.styled-select::after {
+  content: "▼"; /* Add a custom arrow */
+  position: absolute;
+  top: 50%;
+  right: 1.5em;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ignore clicks on the arrow */
+  color: white;
+  font-size: 1.2em;
+}
+
+/* Option styles (browser-dependent) */
+.styled-select option {
+  background-color: white; /* Dropdown background */
+  color: #333; /* Text color */
+  font-weight: normal;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.margin-bottom{
+  margin-bottom: 2em;
+}
+
+.margin-xl-bottom{
+  margin-bottom: 4em;
+}
+
+
+/* a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+} */
+
+
+
+
+
+
+
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -65,29 +239,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 
-.spotify-login {
-  background-color: #1DB954; /* Spotify green */
-  color: white;
-  border: none;
-  border-radius: 25px; /* Rounded edges */
-  padding: 10px 20px; /* Add some padding */
-  font-size: 16px; /* Adjust font size */
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase; /* Optional: uppercase text */
-  font-family: Arial, sans-serif; /* Spotify's style uses sans-serif */
-  transition: background-color 0.3s ease;
-}
 
-.spotify-login:hover {
-  background-color: #1aa34a; /* Slightly darker green on hover */
-}
-
-.spotify-login:active {
-  background-color: #188c3f; /* Even darker green when clicked */
-}
 
 
 .split-list-container {
@@ -96,7 +250,7 @@ button:focus-visible {
 }
 
 .split-list-left, .split-list-right {
-  /*width: 48%;*/ /* Adjust the width as needed */
+  width: 48%; /* Adjust the width as needed */
 }
 
 ul {
@@ -106,10 +260,49 @@ ul {
 
 li {
   text-align: left;
+font-size: 1.2em;
   white-space: nowrap; /* Prevent wrapping */
   overflow: hidden;    /* Ensure long content doesn't overflow the container */
   text-overflow: ellipsis; /* Optional: Add ellipsis for overflowed text */
 }
+
+
+
+
+
+
+
+
+form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 8px;
+  margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -136,7 +329,7 @@ li {
   }
 }
 
-button {
+/* button {
   padding: 10px;
   margin-top: 10px;
   cursor: pointer;
@@ -148,12 +341,14 @@ button {
 
 button:hover {
   background-color: #45a049;
-}
+} */
 
 table {
   width: 100%;
+  min-width: 700px;
   border-collapse: collapse;
-  margin-top: 3em;
+  margin-top: 5em;
+  margin-bottom: 2em;
 }
 
 th {
@@ -165,12 +360,14 @@ td {
   border: 1px solid #ddd;
   height: 4em;
   width: 3em;
+  font-size: 17px;
+  font-weight: bold;
 }
 
 th {
   /* background-color: red; */
   /* color: #fff; */
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .printversion {
@@ -185,9 +382,6 @@ th {
     print-color-adjust: exact !important;
   }
 
-  .app {
-    margin: 0;
-  }
 
   form {
     display: none;
@@ -197,6 +391,7 @@ th {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 0; /* Remove margin for printing */
+    margin-top: 0; /* Remove margin for printing */
   }
 
   button {

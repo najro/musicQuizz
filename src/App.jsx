@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import Playlists from "./Playlists";
+import Playlists from "./pages/Playlists";
+import Dashboard from "./pages/Dashboard";
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
-import GameBoardGenerator from './GameBoardGenerator';
+import GameBoardGenerator from './pages/GameBoardGenerator';
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -14,8 +14,8 @@ function App() {
   return (
      <Router>
       <Routes>
-        <Route path="/" element={<Home setToken={setToken} />} />
-        <Route path="/playlists" element={<Playlists token={token} />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/playlists" element={<Playlists/>} />
         <Route path="/gameboardgenerator" element={<GameBoardGenerator />}/>
       </Routes>
     </Router>
