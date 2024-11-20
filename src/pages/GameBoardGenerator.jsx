@@ -55,65 +55,70 @@ const GameBoardGenerator = () => {
      <BackToDashBoard/>
     
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title
-          <input
-            type="text"
-            value={heading}
-            placeholder="Skriv överskrift"
-            onChange={(e) => setHeading(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Background color
-          <input
-            type="color"
-            value={headingColor}
-            onChange={(e) => setHeadingColor(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Foreground color
-          <input
-            type="color"
-            value={textColor}
-            onChange={(e) => setTextColor(e.target.value)}
-          />
-        </label>
-        <br />
-        
-        <label>
-          Start number
-          <input
-            type="number"
-            value={startNumber}
-            onChange={(e) => setStartNumber(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          End number
-          <input
-            type="number"
-            value={endNumber}
-            onChange={(e) => setEndNumber(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Number of boards
-          <input
-            type="number"
-            value={numberOfGames}
-            onChange={(e) => setNumberOfGames(e.target.value)}
-          />
-        </label>
-        <br />
-        <button type="submit" className="button button-blue">Generate game board</button>
-      </form>
+    <form onSubmit={handleSubmit} className="styled-form">
+      <div className="form-group">
+        <label htmlFor="title">Title</label>
+        <input
+          id="title"
+          type="text"
+          value={heading}
+          placeholder="Skriv överskrift"
+          onChange={(e) => setHeading(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="bg-color">Background color</label>
+        <input
+          id="bg-color"
+          type="color"
+          value={headingColor}
+          onChange={(e) => setHeadingColor(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="fg-color">Foreground color</label>
+        <input
+          id="fg-color"
+          type="color"
+          value={textColor}
+          onChange={(e) => setTextColor(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="start-number">Start number</label>
+        <input
+          id="start-number"
+          type="number"
+          value={startNumber}
+          onChange={(e) => setStartNumber(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="end-number">End number</label>
+        <input
+          id="end-number"
+          type="number"
+          value={endNumber}
+          onChange={(e) => setEndNumber(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="boards">Number of boards</label>
+        <input
+          id="boards"
+          type="number"
+          value={numberOfGames}
+          onChange={(e) => setNumberOfGames(e.target.value)}
+        />
+      </div>
+
+      <button type="submit" className="button button-blue">Generate game board</button>
+    </form>
       <table>
         <thead>
           <tr style={{ backgroundColor: headingColor, padding: "10px", marginTop: "10px" }}>
@@ -131,7 +136,7 @@ const GameBoardGenerator = () => {
         </tbody>
       </table>
 
-      <div class="printversion">
+      <div className="printversion">
         <button className="button button-green" onClick={handlePrint}>Print</button>
       </div>
     </div>
