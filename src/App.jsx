@@ -5,6 +5,7 @@ import Playlists from "./Playlists";
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
+import GameBoardGenerator from './GameBoardGenerator';
 
 function App() {
   //const [count, setCount] = useState(0)
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home setToken={setToken} />} />
         <Route path="/playlists" element={<Playlists token={token} />} />
-        {/* <Route path="/generate" element={<Generate />} /> */}
+        <Route path="/gameboardgenerator" element={<GameBoardGenerator />}/>
       </Routes>
     </Router>
   )
