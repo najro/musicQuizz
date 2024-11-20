@@ -110,3 +110,96 @@ li {
   overflow: hidden;    /* Ensure long content doesn't overflow the container */
   text-overflow: ellipsis; /* Optional: Add ellipsis for overflowed text */
 }
+
+
+
+
+
+@media print {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    page-break-before: always; /* Ensures each table starts on a new page */
+  }
+
+  table:first-of-type {
+    page-break-before: auto; /* Removes the page break before the first table */
+  }
+
+  tr {
+    page-break-inside: avoid; /* Prevents breaking rows across pages */
+  }
+
+  td, th {
+    padding: 8px;
+    border: 1px solid black;
+  }
+}
+
+button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 3em;
+}
+
+th {
+  border: 1px solid #ddd;
+  height: 2em;
+}
+
+td {
+  border: 1px solid #ddd;
+  height: 4em;
+  width: 3em;
+}
+
+th {
+  /* background-color: red; */
+  /* color: #fff; */
+  font-size: 3em;
+}
+
+.printversion {
+  margin-top: 3em;
+}
+
+@media print {
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .app {
+    margin: 0;
+  }
+
+  form {
+    display: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0; /* Remove margin for printing */
+  }
+
+  button {
+    display: none; /* Hide buttons when printing */
+  }
+}

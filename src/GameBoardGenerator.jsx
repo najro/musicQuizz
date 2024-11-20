@@ -6,9 +6,11 @@ const generateRandomNumber = (min, max) => {
 };
 
 const GameBoardGenerator = () => {
-  const [heading, setHeading] = useState("");
-  const [startNumber, setStartNumber] = useState("");
-  const [endNumber, setEndNumber] = useState("");
+  const [heading, setHeading] = useState("Heading");
+  const [headingColor, setHeadingColor] = useState("#d71d1d");
+  const [textColor, setTextColor] = useState("#ffffff");
+  const [startNumber, setStartNumber] = useState("1");
+  const [endNumber, setEndNumber] = useState("25");
   const [tableValues, setTableValues] = useState([]);
 
   const handleSubmit = (e) => {
@@ -49,7 +51,7 @@ const GameBoardGenerator = () => {
     <div className="app">
       <form onSubmit={handleSubmit}>
         <label>
-          Överskrift:
+          Title
           <input
             type="text"
             value={heading}
@@ -59,7 +61,26 @@ const GameBoardGenerator = () => {
         </label>
         <br />
         <label>
-          Startnummer:
+          Background color
+          <input
+            type="color"
+            value={headingColor}
+            onChange={(e) => setHeadingColor(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Foreground color
+          <input
+            type="color"
+            value={textColor}
+            onChange={(e) => setTextColor(e.target.value)}
+          />
+        </label>
+        <br />
+        
+        <label>
+          Start number
           <input
             type="number"
             value={startNumber}
@@ -68,7 +89,7 @@ const GameBoardGenerator = () => {
         </label>
         <br />
         <label>
-          Slutnummer:
+          End number
           <input
             type="number"
             value={endNumber}
@@ -76,12 +97,12 @@ const GameBoardGenerator = () => {
           />
         </label>
         <br />
-        <button type="submit">Generera spelplan</button>
+        <button type="submit">Generate game board</button>
       </form>
       <table>
         <thead>
-          <tr>
-            <th colSpan="5">{heading}</th>
+          <tr style={{ backgroundColor: headingColor, padding: "10px", marginTop: "10px" }}>
+            <th style={{color: textColor}} colSpan="5">{heading}</th>
           </tr>
         </thead>
         <tbody>
@@ -96,7 +117,7 @@ const GameBoardGenerator = () => {
       </table>
 
       <div class="printversion">
-        <button onClick={handlePrint}>Skriv ut</button>
+        <button onClick={handlePrint}>Print</button>
       </div>
     </div>
   );
