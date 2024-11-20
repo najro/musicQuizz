@@ -11,7 +11,9 @@ const GameBoardGenerator = () => {
   const [textColor, setTextColor] = useState("#ffffff");
   const [startNumber, setStartNumber] = useState("1");
   const [endNumber, setEndNumber] = useState("25");
+  const [numberOfGames, setNumberOfGames] = useState("10");
   const [tableValues, setTableValues] = useState([]);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,10 +26,11 @@ const GameBoardGenerator = () => {
       isNaN(end) ||
       end - start < 24 ||
       start <= 0 ||
-      start <= 0
+      start <= 0 ||
+      numberOfGames <= 0
     ) {
       alert(
-        "Fel input. Se till att skillnad mellan talen är minst 25 enhet och är större än 0"
+        "Wrong input. Make sure that difference between numbers are minimum 25 an larger than 0. You need minimum 1 gameboard"
       );
       return;
     }
@@ -94,6 +97,15 @@ const GameBoardGenerator = () => {
             type="number"
             value={endNumber}
             onChange={(e) => setEndNumber(e.target.value)}
+          />
+        </label>
+        <br />
+        <label>
+          Number of boards
+          <input
+            type="number"
+            value={numberOfGames}
+            onChange={(e) => setNumberOfGames(e.target.value)}
           />
         </label>
         <br />
