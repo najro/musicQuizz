@@ -1,0 +1,36 @@
+# Node modules
+/node_modules/
+
+# Build output
+/dist/
+/vite.svg
+
+# Log files
+*.log
+
+# Dependency directories
+/.pnpm/
+/npm-debug.log*
+/yarn-debug.log*
+/yarn-error.log*
+
+# .env files (if you have sensitive information in these)
+.env
+.env.*.local
+
+# IDEs and Editors
+.vscode/
+/.idea/
+/*.sublime-workspace
+/*.sublime-project
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Test coverage reports
+/coverage/
+
+# eslint and prettier
+.eslintcache
+/prettier-*.log
