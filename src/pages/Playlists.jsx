@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TrackList from '../components/TrackList';
 import BackToDashBoard from '../components/BackToDashBoard'
+import PrintButton from '../components/PrintButton'
+
 
 const Playlists = ({ spotifyToken }) => {
   const [playlists, setPlaylists] = useState([]);
@@ -15,19 +17,8 @@ const Playlists = ({ spotifyToken }) => {
   const scopes = ["playlist-read-private"];
 
   useEffect(() => {
-    // Extract token from the URL hash
-    //const hash = window.location.hash;
-
-    //console.log("spotifyToken", spotifyToken); // Inspect the value
-    //console.log(typeof spotifyToken)
-    //console.log("Spotify token",spotifyToken, "end text" )
-
   
-
     if (spotifyToken != "" && playlists.length === 0 ) {
-
-
-
         console.log("Calling playlist with token : ", spotifyToken)
 
         axios.get("https://api.spotify.com/v1/me/playlists", {
@@ -90,11 +81,12 @@ const Playlists = ({ spotifyToken }) => {
             </select>
             </div>
             <TrackList tracks={tracks} />
+
+            {playlists.length === 0 ? <></>:<PrintButton/>}
+            
         </div>
-        }
-        
+        }    
     </>
-    
   );
 }
 

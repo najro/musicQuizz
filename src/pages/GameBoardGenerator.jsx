@@ -51,7 +51,7 @@ const GameBoardGenerator = () => {
   return (
     <>
      <BackToDashBoard/>
-    
+     <h1>Generate quizz boards</h1>
     <div>
     <form onSubmit={handleSubmit} className="styled-form">
       <div className="form-group">

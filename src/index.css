@@ -329,6 +329,7 @@ input {
   td, th {
     padding: 8px;
     border: 1px solid black;
+    background-color: #ffffff;
   }
 }
 
@@ -365,6 +366,7 @@ td {
   width: 3em;
   font-size: 17px;
   font-weight: bold;
+  background-color: #ffffff;
 }
 
 th {
@@ -386,7 +388,7 @@ th {
   }
 
 
-  form {
+  form, h1, h2, .custom-dropdown {
     display: none;
   }
 
@@ -409,19 +411,22 @@ th {
 
 .styled-form {
   width: 100%;
-  max-width: 500px;
+  min-width: 700px;
   margin: 0 auto;
-  padding: 1.5em;
-  background-color: #f9f9f9;
+  /*padding: 1.5em;*/
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 0.5em;
   font-family: Arial, sans-serif;
+  text-align: left;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 
 label {
