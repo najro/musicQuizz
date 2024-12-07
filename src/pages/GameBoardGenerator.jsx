@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import BackToDashBoard from '../components/BackToDashBoard'
+import PrintButton from '../components/PrintButton'
 
 const generateRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -46,9 +47,6 @@ const GameBoardGenerator = () => {
     setTableValues(Array.from(uniqueValues));
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
 
   return (
     <>
@@ -136,9 +134,7 @@ const GameBoardGenerator = () => {
         </tbody>
       </table>
 
-      <div className="printversion">
-        <button className="button button-green" onClick={handlePrint}>Print</button>
-      </div>
+      <PrintButton/>
     </div>
     </>
   );

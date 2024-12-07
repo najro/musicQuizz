@@ -8,7 +8,7 @@ const Dashboard = ({  }) => {
     return (
                 <>
                 <div>
-                    <h1>Welcome to Music Quizz Generator</h1>
+                    <h1>Welcome to Music Quizz Generator v0.1</h1>
                    
                    <div>
                         <button className="button button-green margin-bottom" onClick={() => navigate('/playlists')}>

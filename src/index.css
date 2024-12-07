@@ -17,10 +17,11 @@
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /*place-items: center;*/
   margin-top: 5em;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(to bottom, #ffffff 0%,#07442d  100%);
 }
 
 h1 {
@@ -247,6 +248,8 @@ a:hover {
 .split-list-container {
   display: flex;
   justify-content: space-between;
+  background-color: #fffffF;
+  border-radius: 30px;
 }
 
 .split-list-left, .split-list-right {

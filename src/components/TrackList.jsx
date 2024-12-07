@@ -9,26 +9,33 @@ const TrackList = ({ tracks }) => {
   const secondHalf = tracks.slice(midpoint);
 
   return (
-    <div className="split-list-container">
-      <div className="split-list-left">
-        <ul>
-          {firstHalf.map((track, idx) => (
-            <li key={idx}>
-              {track.track.name} ({track.track.artists.map(artist => artist.name).join(", ")}) - {idx + 1}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className="split-list-right">
-        <ul>
-          {secondHalf.map((track, idx) => (
-            <li key={idx}>
-              {track.track.name} ({track.track.artists.map(artist => artist.name).join(", ")}) - {midpoint + idx + 1}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <>
+      {tracks.length > 0 ? 
+        
+          <div className="split-list-container">
+            <div className="split-list-left">
+              <ul>
+                {firstHalf.map((track, idx) => (
+                  <li key={idx}>
+                    {track.track.name} ({track.track.artists.map(artist => artist.name).join(", ")}) - {idx + 1}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="split-list-right">
+              <ul>
+                {secondHalf.map((track, idx) => (
+                  <li key={idx}>
+                    {track.track.name} ({track.track.artists.map(artist => artist.name).join(", ")}) - {midpoint + idx + 1}
+                  </li>
+                ))}
+              </ul>
+            </div>
+        </div>
+        :
+        <></>
+      }
+    </>
   );
 };
 
