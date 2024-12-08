@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BackToDashBoard from '../components/BackToDashBoard'
 import PrintButton from '../components/PrintButton'
+import GameBoard from '../components/GameBoard'
 
 const generateRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -117,22 +118,9 @@ const GameBoardGenerator = () => {
 
       <button type="submit" className="button button-blue">Generate game board</button>
     </form>
-      <table>
-        <thead>
-          <tr style={{ backgroundColor: headingColor, padding: "10px", marginTop: "10px" }}>
-            <th style={{color: textColor}} colSpan="5">{heading}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[...Array(5)].map((_, rowIndex) => (
-            <tr key={rowIndex}>
-              {[...Array(5)].map((_, colIndex) => (
-                <td key={colIndex}>{tableValues[rowIndex * 5 + colIndex]}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+
+      
+      <GameBoard headingColor={headingColor} textColor={textColor} tableValues={tableValues} heading={heading} />
 
       <PrintButton/>
     </div>
