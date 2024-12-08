@@ -82,7 +82,7 @@ const Playlists = ({ spotifyToken }) => {
             </div>
             <TrackList tracks={tracks} />
 
-            {playlists.length === 0 ? <></>:<PrintButton/>}
+            {tracks.length > 0 ? <PrintButton/> : <></>}
             
         </div>
         }    

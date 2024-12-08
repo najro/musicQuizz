@@ -40,7 +40,10 @@ const GameBoardGenerator = () => {
     <BackToDashBoard/>
      <h1>Generate quizz boards</h1>
 
-     {!hasValidInput() && <>Wrong input. Make sure that difference between numbers are minimum 25 an larger than 0. You need minimum 1 gameboard</>}
+     {!hasValidInput() && 
+     <>
+     <div className="error-input">Wrong input. Make sure that difference between numbers are minimum 25 an larger than 0. You need minimum 1 gameboard</div>
+     </>}
 
     <div>
     <form className="styled-form">

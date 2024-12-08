@@ -242,7 +242,15 @@ a:hover {
   }
 } */
 
-
+.error-input{
+  color:#cc3333;
+  max-width: 700px;
+  padding: 1em;
+  background-color: #ffffff;
+  border: 1px solid #cc3333;
+  text-align: left;
+  margin-bottom: 1em;
+}
 
 
 .split-list-container {
