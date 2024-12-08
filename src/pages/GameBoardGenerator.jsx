@@ -44,6 +44,7 @@ const GameBoardGenerator = () => {
      <>
      <div className="error-input">Wrong input. Make sure that difference between numbers are minimum 25 an larger than 0. You need minimum 1 gameboard</div>
      </>}
+     
 
     <div>
     <form className="styled-form">
@@ -110,6 +111,8 @@ const GameBoardGenerator = () => {
     </form>
 
   
+    {hasValidInput() && <><PrintButton/></>}
+    
     {hasValidInput() && 
       Array.from({ length: numberOfGames }).map((_, index) => {
             const tableValues = generateTableValues(parseInt(startNumber), parseInt(endNumber));
