@@ -121,7 +121,7 @@ const GameBoardGenerator = () => {
       Array.from({ length: numberOfGames }).map((_, index) => {
             const tableValues = generateTableValues(parseInt(startNumber), parseInt(endNumber));
             return (
-              <GameBoard key={index} headingColor={headingColor} textColor={textColor} tableValues={tableValues} heading={heading} />
+              <GameBoard key={index} headingColor={headingColor} textColor={textColor} tableValues={tableValues} heading={heading} index={index} />
             );
           })
     }

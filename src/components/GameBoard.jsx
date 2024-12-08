@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const GameBoard = ({ headingColor, textColor, tableValues, heading }) => {
+const GameBoard = ({ headingColor, textColor, tableValues, heading, index }) => {
 
  
   return (
     <>
-    <div class="table-container">
+    <div className={`table-container ${index === 0 ? 'first' : ''}`}>
         <table>
             <thead>
             <tr style={{ backgroundColor: headingColor, padding: "10px", marginTop: "10px" }}>
