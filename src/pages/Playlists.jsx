@@ -38,7 +38,11 @@ const Playlists = ({ spotifyToken }) => {
   }, []);
 
   const fetchTracks = (playlistId) => {
-    axios
+
+    if(playlistId === ""){
+      setTracks([]);
+    }else{
+      axios
       .get(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
         headers: { Authorization: `Bearer ${spotifyToken}` },
       })
@@ -49,8 +53,11 @@ const Playlists = ({ spotifyToken }) => {
         trackList.sort((a, b) => a.track.name.localeCompare(b.track.name));
 
         console.log("Reponse: XXXXXXXXXXXXXXXX",response.data.items )
-        setTracks(trackList)
+        setTracks(trackList);
       });
+    }
+
+      
   };
 
   const handleLogin = () => {
@@ -72,6 +79,7 @@ const Playlists = ({ spotifyToken }) => {
             <h2>Select your playlist</h2>
             <div className="custom-dropdown margin-xl-bottom">
             <select className="styled-select" onChange={(e) => fetchTracks(e.target.value)}>
+              <option value="" select>Select playlist</option>
               {playlists
               .filter((pl) => pl && pl.id && pl.name) // Ensure valid data
               .map((pl) => (

@@ -14,7 +14,7 @@ const GameBoardGenerator = () => {
   const [textColor, setTextColor] = useState("#ffffff");
   const [startNumber, setStartNumber] = useState("1");
   const [endNumber, setEndNumber] = useState("25");
-  const [numberOfGames, setNumberOfGames] = useState("1");
+  const [numberOfGames, setNumberOfGames] = useState("5");
   
   const generateTableValues = (start, end) => {
     const uniqueValues = new Set();
@@ -38,7 +38,7 @@ const GameBoardGenerator = () => {
   return (
     <>
     <BackToDashBoard/>
-     <h1>Generate quizz boards</h1>
+     <h1>Generate your quizz boards</h1>
 
      {!hasValidInput() && 
      <>

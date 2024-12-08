@@ -95,11 +95,11 @@ h1 {
 }
 
 .button-green:hover {
-  background-color: #1aa34a; /* Slightly darker green on hover */
+  background-color: #044c1d; /* Slightly darker green on hover */
 }
 
 .button-green:active {
-  background-color: #188c3f; /* Even darker green when clicked */
+  background-color: #044c1d; /* Even darker green when clicked */
 }
 
 /* Blue Button */
@@ -108,11 +108,11 @@ h1 {
 }
 
 .button-blue:hover {
-  background-color: #0056b3; /* Slightly darker blue on hover */
+  background-color: #023265; /* Slightly darker blue on hover */
 }
 
 .button-blue:active {
-  background-color: #003f7f; /* Even darker blue when clicked */
+  background-color: #023265; /* Even darker blue when clicked */
 }
 
 /* Red Button */
@@ -158,13 +158,13 @@ h1 {
 
 /* Hover effect */
 .styled-select:hover {
-  background-color: #1aa34a; /* Slightly darker green */
+  background-color: #044c1d; /* Slightly darker green */
 }
 
 /* Focus effect */
 .styled-select:focus {
   outline: none; /* Removes default focus outline */
-  box-shadow: 0 0 5px #1db954; /* Green glow */
+  box-shadow: 0 0 5px #044c1d; /* Green glow */
 }
 
 /* Styling the dropdown arrow */
@@ -190,6 +190,10 @@ h1 {
   font-weight: normal;
   padding: 10px;
   border-radius: 5px;
+}
+
+.styled-select option:hover {
+  background-color: red; /* Dropdown background */
 }
 
 
@@ -241,11 +245,12 @@ h1 {
 }
 
 .split-list-left, .split-list-right {
-  width: 48%; /* Adjust the width as needed */
+  /*width: 90%;*/ /* Adjust the width as needed */
 }
 
 ul {
-  padding-left: 4em;
+  padding-left: 1em;
+  padding-right: 1em;
   list-style-type: none;
 }
 
@@ -253,7 +258,7 @@ li {
   text-align: left;
   font-size: 1.2em;
   white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden;    /* Ensure long content doesn't overflow the container */
+  /*overflow: hidden;*/    /* Ensure long content doesn't overflow the container */
   text-overflow: ellipsis; /* Optional: Add ellipsis for overflowed text */
 }
 
