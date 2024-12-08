@@ -250,6 +250,7 @@ a:hover {
   justify-content: space-between;
   background-color: #fffffF;
   border-radius: 30px;
+  min-width: 100%;
 }
 
 .split-list-left, .split-list-right {
