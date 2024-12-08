@@ -46,73 +46,77 @@ const GameBoardGenerator = () => {
      </>}
      
 
+     <div className="split-list-container board-form">
+     <div className="split-list-left">
+      <div className="form-group">
+          <label htmlFor="title">Title</label>
+          <input
+            id="title"
+            type="text"
+            value={heading}
+            placeholder="Skriv överskrift"
+            onChange={(e) => setHeading(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="bg-color">Background color</label>
+          <input
+            id="bg-color"
+            type="color"
+            value={headingColor}
+            onChange={(e) => setHeadingColor(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="fg-color">Foreground color</label>
+          <input
+            id="fg-color"
+            type="color"
+            value={textColor}
+            onChange={(e) => setTextColor(e.target.value)}
+          />
+        </div>
+     </div>
+     <div className="split-list-right">
+      <div className="form-group">
+          <label htmlFor="start-number">Start number</label>
+          <input
+            id="start-number"
+            type="number"
+            value={startNumber}
+            onChange={(e) => setStartNumber(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="end-number">End number</label>
+          <input
+            id="end-number"
+            type="number"
+            value={endNumber}
+            onChange={(e) => setEndNumber(e.target.value)}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="boards">Number of boards</label>
+          <input
+            id="boards"
+            type="number"
+            value={numberOfGames}
+            onChange={(e) => setNumberOfGames(e.target.value)}
+          />
+        </div>
+     </div>
+     </div>
+
+
     <div>
-    <form className="styled-form">
-      <div className="form-group">
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          value={heading}
-          placeholder="Skriv överskrift"
-          onChange={(e) => setHeading(e.target.value)}
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="bg-color">Background color</label>
-        <input
-          id="bg-color"
-          type="color"
-          value={headingColor}
-          onChange={(e) => setHeadingColor(e.target.value)}
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="fg-color">Foreground color</label>
-        <input
-          id="fg-color"
-          type="color"
-          value={textColor}
-          onChange={(e) => setTextColor(e.target.value)}
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="start-number">Start number</label>
-        <input
-          id="start-number"
-          type="number"
-          value={startNumber}
-          onChange={(e) => setStartNumber(e.target.value)}
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="end-number">End number</label>
-        <input
-          id="end-number"
-          type="number"
-          value={endNumber}
-          onChange={(e) => setEndNumber(e.target.value)}
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="boards">Number of boards</label>
-        <input
-          id="boards"
-          type="number"
-          value={numberOfGames}
-          onChange={(e) => setNumberOfGames(e.target.value)}
-        />
-      </div>
-    </form>
-
   
     {hasValidInput() && <><PrintButton/></>}
-    
+
     {hasValidInput() && 
       Array.from({ length: numberOfGames }).map((_, index) => {
             const tableValues = generateTableValues(parseInt(startNumber), parseInt(endNumber));
