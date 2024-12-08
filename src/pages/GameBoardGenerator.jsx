@@ -8,53 +8,42 @@ const generateRandomNumber = (min, max) => {
 };
 
 const GameBoardGenerator = () => {
-  const [heading, setHeading] = useState("Heading");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [heading, setHeading] = useState("Quizz Title");
   const [headingColor, setHeadingColor] = useState("#d71d1d");
   const [textColor, setTextColor] = useState("#ffffff");
   const [startNumber, setStartNumber] = useState("1");
   const [endNumber, setEndNumber] = useState("25");
-  const [numberOfGames, setNumberOfGames] = useState("10");
-  const [tableValues, setTableValues] = useState([]);
+  const [numberOfGames, setNumberOfGames] = useState("1");
   
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const start = parseInt(startNumber);
-    const end = parseInt(endNumber);
-
-    if (
-      isNaN(start) ||
-      isNaN(end) ||
-      end - start < 24 ||
-      start <= 0 ||
-      start <= 0 ||
-      numberOfGames <= 0
-    ) {
-      alert(
-        "Wrong input. Make sure that difference between numbers are minimum 25 an larger than 0. You need minimum 1 gameboard"
-      );
-      return;
-    }
-
+  const generateTableValues = (start, end) => {
     const uniqueValues = new Set();
-
     while (uniqueValues.size < 25) {
       uniqueValues.add(generateRandomNumber(start, end));
     }
-
-    console.log("uniqueValues", uniqueValues);
-
-    setTableValues(Array.from(uniqueValues));
+    return Array.from(uniqueValues);
   };
 
+  const hasValidInput = () => {
+    const start = parseInt(startNumber);
+    const end = parseInt(endNumber);
+
+    if (isNaN(start) || isNaN(end) || end - start < 24 || start <= 0 || start <= 0 || numberOfGames <= 0) 
+    {
+      return false;
+    }
+    return true;
+  };
 
   return (
     <>
-     <BackToDashBoard/>
+    <BackToDashBoard/>
      <h1>Generate quizz boards</h1>
+
+     {!hasValidInput() && <>Wrong input. Make sure that difference between numbers are minimum 25 an larger than 0. You need minimum 1 gameboard</>}
+
     <div>
-    <form onSubmit={handleSubmit} className="styled-form">
+    <form className="styled-form">
       <div className="form-group">
         <label htmlFor="title">Title</label>
         <input
@@ -115,14 +104,20 @@ const GameBoardGenerator = () => {
           onChange={(e) => setNumberOfGames(e.target.value)}
         />
       </div>
-
-      <button type="submit" className="button button-blue">Generate game board</button>
     </form>
 
-      
-      <GameBoard headingColor={headingColor} textColor={textColor} tableValues={tableValues} heading={heading} />
+  
+    {hasValidInput() && 
+      Array.from({ length: numberOfGames }).map((_, index) => {
+            const tableValues = generateTableValues(parseInt(startNumber), parseInt(endNumber));
+            return (
+              <GameBoard key={index} headingColor={headingColor} textColor={textColor} tableValues={tableValues} heading={heading} />
+            );
+          })
+    }
 
-      <PrintButton/>
+    {hasValidInput() && <><PrintButton/></>}
+
     </div>
     </>
   );
